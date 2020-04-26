@@ -1,0 +1,20 @@
+{
+  "name": "create-exact-app",
+  "version": "0.0.8",
+  "main": "./src/cli.js",
+  "dependencies": {
+    "chalk": "3",
+    "commander": "4",
+    "exact-template": "*",
+    "fs-extra": "9",
+    "inquirer": "7",
+    "validate-npm-package-name": "3"
+  },
+  "devDependencies": {},
+  "bin": {
+    "create-exact-app": "./src/cli.js"
+  },
+  "scripts": {
+    "dev": "create-exact-app"
+  }
+}
