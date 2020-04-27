@@ -10,7 +10,17 @@ web app.
     npx create-exact-app my-app-name
     cd my-app-name
     npm run dev
-    https://localhost:3000 in browser
+    http://localhost:3000 in browser
+
+Or you can run the template directly without even creating your own local app,
+by doing:
+
+    npx exact-template
+    http://localhost:3000 in browser
+
+Either example above can have a port specified as an environment variable, e.g.
+
+    PORT=3131 npm run dev
 
 ### Features
 

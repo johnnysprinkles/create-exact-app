@@ -49,6 +49,7 @@ async function go() {
     name: projectName,
     description: 'Fill this in',
     version: '1.0.0',
+    createExactAppVersion: packageJsonTemplate.version,
     main: packageJsonTemplate.main,
     dependencies: packageJsonTemplate.dependencies,
     devDependencies: packageJsonTemplate.devDependencies,
@@ -60,6 +61,10 @@ async function go() {
   // npm install
   console.log(chalk.bold('Installing npm dependencies.'));
   execSync('npm install --prefix ' + projectName, { stdio: 'inherit' });
+
+  // Clean up unneeded files
+  console.log(chalk.bold('Cleaning up.'));
+  fs.unlinkSync(dest + '/run.js');
 
   console.log(chalk.bold(`Done. cd into ${projectName} and "npm run dev" to start.`));
 }
