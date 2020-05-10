@@ -1,6 +1,6 @@
 {
   "name": "create-exact-app",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./src/cli.js",
   "dependencies": {
     "chalk": "^3",

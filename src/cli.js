@@ -65,6 +65,7 @@ async function go() {
   // Clean up unneeded files
   console.log(chalk.bold('Cleaning up.'));
   fs.unlinkSync(dest + '/run.js');
+  fs.unlinkSync(dest + '/LICENSE');
 
   console.log(chalk.bold(`Done. cd into ${projectName} and "npm run dev" to start.`));
 }
