@@ -15,31 +15,21 @@ async function go() {
   let program = new Command();
 
   program
+    .name('create-exact-app')
     .arguments('<project-directory>')
     .action(name => (projectName = name))
     .parse(process.argv);
 
   if (!projectName) {
-    console.error('Must provide a name');
+    console.log(program.helpInformation());
     process.exit();
   }
 
   // Copy the template over
   const src = __dirname + '/../node_modules/exact-template';
   const dest = process.cwd() + '/' + projectName;
-  if (fs.existsSync(dest)) {
-    let { confirm } = await inquirer.prompt({
-      type: 'confirm',
-      name: 'confirm',
-      message: `Directory ${projectName} already exists. Delete it and proceed?`,
-    });
-    if (confirm) {
-      fs.removeSync(dest);
-    } else {
-      process.exit();
-    }
-  }
-  fs.mkdirSync(dest);
+
+  fs.ensureDirSync(dest);
   fs.copySync(src, dest);
 
   // Generate package.json
@@ -64,8 +54,15 @@ async function go() {
 
   // Clean up unneeded files
   console.log(chalk.bold('Cleaning up.'));
-  fs.unlinkSync(dest + '/run.js');
   fs.unlinkSync(dest + '/LICENSE');
+  fs.unlinkSync(dest + '/run.js');
+
+  // Sigh...
+  // https://github.com/npm/npm/issues/1862
+  // https://github.com/npm/npm/issues/7252
+  fs.writeFileSync(dest + '/.gitignore', `node_modules/
+dist
+.DS_Store`);
 
   console.log(chalk.bold(`Done. cd into ${projectName} and "npm run dev" to start.`));
 }
