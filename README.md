@@ -29,3 +29,9 @@ Either example above can have a port specified as an environment variable, e.g.
 * Multipage support by way of a `weback.config.js` that has an array of entries
 * Organizational structure that can scale with a large teams
 * Various demo pages that you can delete
+
+### Hosted demo
+
+This is just `npx create-exact-app` run nightly in a cron job:
+
+**http://exact.royalbarrel.com**
