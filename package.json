@@ -1,9 +1,11 @@
 {
   "name": "create-exact-app",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "./src/cli.js",
   "repository": "github:johnnysprinkles/create-exact-app",
   "license": "MIT",
+  "description": "Boilerplate generator for isomorphic multipage Node/Express/React app",
+  "keywords": ["isomorphic", "react", "boilerplate", "express", "multipage"],
   "dependencies": {
     "chalk": "^3",
     "commander": "^4",

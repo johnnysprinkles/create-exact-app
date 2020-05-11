@@ -1,9 +1,11 @@
-## About
+A boilerplate generator, that scaffolds out an isomorphic multipage
+Node/Express/React web app. Really all this does is clone the template,
+[exact-template](https://www.npmjs.com/package/exact-template).
 
-Scaffolds a new starter template for an isomorphic multipage Node/Express/React
-web app.
+Preview the result, hosted at http://exact.royalbarrel.com, which explains more
+about the philosophy and motivation.
 
-"Exact" is EXpress + reACT.
+"Exact" is EXpress + reACT, for lack of a better name.
 
 ### To use
 
@@ -12,26 +14,20 @@ web app.
     npm run dev
     http://localhost:3000 in browser
 
-Or you can run the template directly without even creating your own local app,
-by doing:
-
-    npx exact-template
-    http://localhost:3000 in browser
-
-Either example above can have a port specified as an environment variable, e.g.
-
-    PORT=3131 npm run dev
-
 ### Features
 
-* Basic Express setup in `src/main.js`
-* Isomorphic page rendering in `src/server/render.js`
-* Multipage support by way of a `weback.config.js` that has an array of entries
+* Basic Express setup
+* Isomorphic page rendering
+* Multipage support
 * Organizational structure that can scale with a large teams
 * Various demo pages that you can delete
 
-### Hosted demo
+The template distills what I've learned over several years of building
+isomorphic multipage React apps at both FAANG and non-FAANG companies. Learn
+more about the template on the
+[exact-template](https://www.npmjs.com/package/exact-template) npm page.
 
-This is just `npx create-exact-app` run nightly in a cron job:
+### Related packages
 
-**http://exact.royalbarrel.com**
+[create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)  
+[react-boilerplate](https://www.reactboilerplate.com/)  
