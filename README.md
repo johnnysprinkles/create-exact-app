@@ -2,7 +2,7 @@ A boilerplate generator, that scaffolds out an isomorphic multipage
 Node/Express/React web app. Really all this does is clone the template,
 [exact-template](https://www.npmjs.com/package/exact-template).
 
-Preview the result, hosted at http://exact.royalbarrel.com, which explains more
+Preview the result, hosted at https://exact.royalbarrel.com, which explains more
 about the philosophy and motivation.
 
 "Exact" is EXpress + reACT, for lack of a better name.
