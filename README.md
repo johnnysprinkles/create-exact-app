@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/create-exact-app?style=flat-square)](https://www.npmjs.com/package/create-exact-app)
+
 A boilerplate generator, that scaffolds out an isomorphic multipage
 Node/Express/React web app. Really all this does is clone the template,
 [exact-template](https://www.npmjs.com/package/exact-template).
