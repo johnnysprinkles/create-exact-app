@@ -16,6 +16,16 @@ about the philosophy and motivation.
     npm run dev
     http://localhost:3000 in browser
 
+### Options
+
+To get usage options run with no parameters, e.g.
+
+    npx create-exact-app
+
+Options include:
+
+* `--lean`: Strips out all the example stuff, leaving a bare "Hello World" page.
+
 ### Features
 
 * Basic Express setup

@@ -1,6 +1,6 @@
 {
   "name": "create-exact-app",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "./src/cli.js",
   "repository": "github:johnnysprinkles/create-exact-app",
   "license": "MIT",

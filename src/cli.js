@@ -5,9 +5,17 @@ const { Command } = require('commander');
 const inquirer = require('inquirer');
 const execSync = require('child_process').execSync;
 const chalk = require('chalk');
+const lean = require('./lean');
 
 // When run via "npx" the current source code file will be something like
 // /Users/jpsimons/.npm/_npx/8607/lib/node_modules/create-exact-app/src/cli.js
+
+// Example uses:
+//
+// npx create-exact-app my-app [options]
+//   creates a new instance of the exact-template, named "my-app"
+// Options:
+// --lean Minimal instance with a single "hello world" page.
 
 async function go() {
   let projectName;
@@ -18,6 +26,7 @@ async function go() {
     .name('create-exact-app')
     .arguments('<project-directory>')
     .action(name => (projectName = name))
+    .option('--lean', 'Lean, minimal initial starting point')
     .parse(process.argv);
 
   if (!projectName) {
@@ -63,6 +72,11 @@ async function go() {
   fs.writeFileSync(dest + '/.gitignore', `node_modules/
 dist
 .DS_Store`);
+
+  if (program.lean) {
+    console.log(chalk.bold('Stripping down to minimal.'));
+    lean(dest);    
+  }
 
   console.log(chalk.bold(`Done. cd into ${projectName} and "npm run dev" to start.`));
 }
